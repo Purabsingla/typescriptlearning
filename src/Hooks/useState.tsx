@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import { useState } from "react";
+import Composition from "../Composition/Composition";
 
 // interface Component {
 //   name: string;
@@ -78,35 +79,12 @@ const USESTATE: React.FunctionComponent = () => {
         />
       </div>
 
+      <Composition
+        formData={formData}
+        HandleFormChange={HandleFormChange}
+        HandleSubmit={HandleSubmit}
+      />
       {/* Time to Handle Forms */}
-      <div className="form-handeling mx-20 flex gap-6 justify-center items-center flex-col">
-        <form onSubmit={HandleSubmit}>
-          <div>
-            <label>Name :</label>
-            <input
-              type="text"
-              placeholder="Enter Something"
-              name="name"
-              onChange={HandleFormChange}
-              value={formData.name ? formData.name : ""}
-            />
-          </div>
-          <div>
-            <label>email :</label>
-            <input
-              type="email"
-              placeholder="Enter Something"
-              name="email"
-              onChange={HandleFormChange}
-              value={formData.email ? formData.email : ""}
-            />
-          </div>
-
-          <button type="submit" className="mb-10 border bg-gray-200 py-3 px-5">
-            Submit{" "}
-          </button>
-        </form>
-      </div>
     </>
   );
 };
